@@ -1,13 +1,12 @@
 # Bardaval Jagadeesh — Portfolio
 
-High-end personal portfolio with live typing, scroll motion, and a Node contact API.
+Premium animated portfolio for an Android Engineer building enterprise device systems.
 
 **Stack:** React · TypeScript · Vite · Framer Motion · Lenis · Express · Node
 
 ## Quick start
 
 ```bash
-# Install
 npm install --prefix client
 npm install --prefix server
 
@@ -18,8 +17,6 @@ npm run dev
 npm run dev:server
 ```
 
-Contact form posts to `/api/contact` (Vite proxies to the Node server in development).
-
 ## Structure
 
 ```
@@ -27,10 +24,11 @@ client/   React + TypeScript UI
 server/   Express contact API
 ```
 
-## Customize
+## Customize content
 
-- Profile, projects, skills → `client/src/data/content.ts`
-- Optional email delivery → copy `server/.env.example` to `server/.env` and set `SMTP_*`
+All personal copy, projects, skills, and links live in:
+
+`client/src/data/content.ts`
 
 ## Build
 
@@ -38,9 +36,3 @@ server/   Express contact API
 npm run build
 npm run preview
 ```
-
-## Deploy notes
-
-- Host `client/dist` on Vercel / Netlify / GitHub Pages
-- Host `server` on Railway / Render / Fly
-- Set `VITE_API_URL` on the client to your API origin when not using the Vite proxy

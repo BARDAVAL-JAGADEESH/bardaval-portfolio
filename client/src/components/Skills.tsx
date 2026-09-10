@@ -1,26 +1,30 @@
-import { skillGroups } from '../data/content'
+import { portfolioData } from '../data/content'
 import { Reveal } from './Reveal'
 
 export function Skills() {
+  const { skills } = portfolioData
+
   return (
-    <section className="section skills" id="skills">
+    <section className="section skills" id="skills" aria-labelledby="skills-title">
       <div className="section__inner">
         <Reveal>
-          <p className="section__label">Skills</p>
-          <h2 className="section__title">Toolkit I ship with.</h2>
+          <p className="section__label">Technical skills</p>
+          <h2 className="section__title" id="skills-title">
+            Skills
+          </h2>
         </Reveal>
 
-        <div className="skills__grid">
-          {skillGroups.map((group, index) => (
-            <Reveal key={group.title} delay={index * 0.08}>
-              <div className="skills__group">
+        <div className="skills-groups">
+          {skills.groups.map((group, i) => (
+            <Reveal key={group.title} delay={Math.min(i * 0.05, 0.2)}>
+              <article className="skills-group">
                 <h3>{group.title}</h3>
                 <ul>
                   {group.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>

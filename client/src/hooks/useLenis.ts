@@ -3,9 +3,13 @@ import Lenis from 'lenis'
 
 export function useLenis() {
   useEffect(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) return
+
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.05,
       smoothWheel: true,
+      touchMultiplier: 1.1,
     })
 
     let frame = 0

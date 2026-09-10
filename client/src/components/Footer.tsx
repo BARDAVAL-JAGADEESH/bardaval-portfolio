@@ -1,15 +1,16 @@
-import { profile } from '../data/content'
+import { portfolioData } from '../data/content'
 
 export function Footer() {
+  const { personal } = portfolioData
   const year = new Date().getFullYear()
 
   return (
     <footer className="footer">
       <div className="footer__inner">
         <p>
-          © {year} {profile.name}
+          © {year} {personal.name}
         </p>
-        <p>Designed & built with React · TypeScript · Node</p>
+        <p>Android Developer · MDM/UEM · Kotlin</p>
       </div>
     </footer>
   )

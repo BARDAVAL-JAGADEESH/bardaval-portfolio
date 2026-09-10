@@ -1,30 +1,36 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Nav } from './components/Nav'
-import { Hero } from './components/Hero'
-import { About } from './components/About'
-import { Experience } from './components/Experience'
-import { Projects } from './components/Projects'
-import { Skills } from './components/Skills'
-import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import { HomePage } from './pages/HomePage'
+import { ProjectPage } from './pages/ProjectPage'
 import { useLenis } from './hooks/useLenis'
+import { useHashScroll } from './hooks/useHashScroll'
 import './index.css'
 
-function App() {
+function AppShell() {
   useLenis()
+  useHashScroll()
 
   return (
     <>
       <Nav />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects/:id" element={<ProjectPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
       <Footer />
     </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
   )
 }
 
