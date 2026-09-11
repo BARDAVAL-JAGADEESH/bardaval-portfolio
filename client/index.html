@@ -16,6 +16,17 @@
       rel="stylesheet"
     />
     <title>Bardaval Jagadeesh — Android Developer</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme')
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark'
+          document.documentElement.setAttribute('data-theme', theme)
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', theme === 'light' ? '#f4f4f0' : '#000000')
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <script>

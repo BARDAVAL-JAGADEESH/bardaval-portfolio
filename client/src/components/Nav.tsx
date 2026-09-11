@@ -4,11 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { portfolioData } from '../data/content'
 import { parseHashPath, scrollToHash } from '../lib/scroll'
 import { useSectionHash } from '../hooks/useSectionHash'
+import { useTheme } from '../hooks/useTheme'
 
 export function Nav() {
   const { nav, social } = portfolioData
   const location = useLocation()
   const activeId = useSectionHash()
+  const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -77,6 +79,30 @@ export function Nav() {
             </svg>
           </a>
         </div>
+
+        <button
+          className="nav__theme"
+          type="button"
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          onClick={toggleTheme}
+        >
+          {theme === 'dark' ? (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 4.5a1 1 0 0 1 1 1V7a1 1 0 1 1-2 0V5.5a1 1 0 0 1 1-1zm0 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7.5-2.5a1 1 0 1 1 0-2H21a1 1 0 1 1 0 2h-1.5zM4.5 12a1 1 0 0 1-1-1H2a1 1 0 1 1 0 2h1.5a1 1 0 0 1 1-1zm12.6 5.1a1 1 0 0 1 1.4 1.4l-1.06 1.06a1 1 0 1 1-1.42-1.42L17.1 17.1zM6.9 6.9a1 1 0 0 1-1.4-1.4L6.56 4.44A1 1 0 0 1 8 5.86L6.9 6.9zm10.2-2.46a1 1 0 0 1 1.42 1.42L17.46 6.9A1 1 0 1 1 16 5.5l1.1-1.06zM5.5 17.1l1.06 1.06a1 1 0 1 1-1.42 1.42L4.1 18.5A1 1 0 1 1 5.5 17.1zM12 17a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V18a1 1 0 0 1 1-1z"
+              />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M17.6 14.3A7.2 7.2 0 0 1 9.7 6.4a7.2 7.2 0 1 0 7.9 7.9z"
+              />
+            </svg>
+          )}
+        </button>
 
         <button
           className={`nav__burger ${open ? 'is-open' : ''}`}

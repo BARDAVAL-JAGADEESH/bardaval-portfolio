@@ -1,16 +1,20 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { portfolioData } from '../data/content'
 import { MagneticButton } from './MagneticButton'
+import { useTheme } from '../hooks/useTheme'
 import profilePhoto from '../assets/profile.jpg'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const bioColors = ['#a3a3a3', '#b6f04a', '#ffffff', '#8fd63a', '#c4c4c4']
+const bioColorsDark = ['#a3a3a3', '#b6f04a', '#ffffff', '#8fd63a', '#c4c4c4']
+const bioColorsLight = ['#4a4a4a', '#3faf00', '#121212', '#48c200', '#5a5a5a']
 
 export function Hero() {
   const { hero, personal } = portfolioData
   const reduce = useReducedMotion()
+  const { theme } = useTheme()
   const nameLines = [personal.firstName, personal.lastName]
   const bioWords = hero.bio.split(' ')
+  const bioColors = theme === 'light' ? bioColorsLight : bioColorsDark
 
   const stagger = 0.18
   const hold = 2.2
@@ -73,7 +77,7 @@ export function Hero() {
                 return (
                   <motion.span
                     className="hero__bio-word"
-                    key={`${word}-${i}`}
+                    key={`${word}-${i}-${theme}`}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{
                       opacity: [0, 0, 1, 1, 0],
