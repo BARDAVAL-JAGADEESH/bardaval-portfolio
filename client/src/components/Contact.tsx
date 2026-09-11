@@ -6,15 +6,11 @@ export function Contact() {
   const { contact, personal, social } = portfolioData
 
   return (
-    <section className="section contact" id="contact" aria-labelledby="contact-title">
-      <div className="section__inner contact__inner">
+    <section className="section contact" id="contact">
+      <div className="section__inner">
         <Reveal>
           <p className="section__label">Contact</p>
-          <h2 className="contact__title" id="contact-title">
-            {contact.titleLines.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </h2>
+          <h2 className="contact__title">{contact.title}</h2>
           <p className="section__lede">{contact.lede}</p>
         </Reveal>
 
@@ -27,20 +23,13 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="contact__actions-row">
-            <MagneticButton
-              className="btn--primary btn--lg"
-              href={`mailto:${personal.email}`}
-            >
-              {contact.cta}
-            </MagneticButton>
-            <MagneticButton
-              className="btn--ghost btn--lg"
-              href={personal.phoneHref}
-            >
-              Call
-            </MagneticButton>
-          </div>
+          <MagneticButton
+            className="btn--primary btn--glow btn--lg"
+            href={`mailto:${personal.email}`}
+          >
+            {contact.cta}
+            <span aria-hidden="true">›</span>
+          </MagneticButton>
         </Reveal>
 
         <Reveal delay={0.14}>
@@ -54,9 +43,6 @@ export function Contact() {
               <a href={social.linkedin} target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
-            </li>
-            <li>
-              <a href={`mailto:${personal.email}`}>Email</a>
             </li>
           </ul>
         </Reveal>

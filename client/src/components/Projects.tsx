@@ -6,28 +6,18 @@ export function Projects() {
   const { projects } = portfolioData
 
   return (
-    <section className="section projects" id="projects" aria-labelledby="projects-title">
+    <section className="section projects" id="projects">
       <div className="section__inner">
         <Reveal>
-          <p className="section__label">Selected work</p>
-          <h2 className="section__title" id="projects-title">
-            Projects
-          </h2>
+          <p className="section__label">Work</p>
+          <h2 className="section__title">Projects</h2>
         </Reveal>
 
         <div className="projects__grid">
           {projects.map((project, index) => (
-            <Reveal key={project.id} delay={Math.min(index * 0.04, 0.16)}>
-              <Link
-                className="project-card"
-                to={`/projects/${project.id}`}
-              >
-                <div className="project-card__meta">
-                  <span className="project-card__tag">{project.tag}</span>
-                  <span className="project-card__index">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
+            <Reveal key={project.id} delay={index * 0.05}>
+              <Link className="project-card" to={`/projects/${project.id}`}>
+                <span className="project-card__tag">{project.tag}</span>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <ul className="chip-row chip-row--sm">
@@ -36,7 +26,7 @@ export function Projects() {
                   ))}
                 </ul>
                 <span className="project-card__cta">
-                  View project <span aria-hidden="true">→</span>
+                  View details →
                 </span>
               </Link>
             </Reveal>

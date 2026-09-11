@@ -8,7 +8,7 @@
       name="description"
       content="Bardaval Jagadeesh — Android Developer specializing in Kotlin, Android Enterprise, DPC, and MDM/UEM solutions."
     />
-    <meta name="theme-color" content="#08090c" />
+    <meta name="theme-color" content="#000000" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,6 +18,18 @@
     <title>Bardaval Jagadeesh — Android Developer</title>
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+          var nav = performance.getEntriesByType('navigation')[0]
+          if (nav && nav.type === 'reload' && location.hash) {
+            history.replaceState(null, '', location.pathname + location.search)
+          }
+          window.scrollTo(0, 0)
+        } catch (e) {}
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

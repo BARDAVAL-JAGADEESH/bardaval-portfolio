@@ -12,7 +12,7 @@ export const portfolioData = {
     phoneHref: 'tel:+919347052901',
     email: 'jagadeeshbardaval78@gmail.com',
     summary:
-      'Android Developer specializing in Kotlin, Android Enterprise, Device Policy Controller (DPC), and MDM/UEM solutions. Experienced in device provisioning, policy enforcement, kiosk management, remote commands, offline synchronization, and device lifecycle management — with strong focus on debugging, production fixes, and root-cause analysis.',
+      'Android Developer specializing in Kotlin, Jetpack Compose, Android Enterprise, and MDM/UEM. I build modern, scalable Android applications and enterprise solutions with a focus on clean architecture, performance, security, and reliability. Passionate about solving complex technical challenges and creating seamless experiences for both users and organizations.',
   },
 
   social: {
@@ -21,207 +21,104 @@ export const portfolioData = {
   },
 
   nav: [
-    { label: 'Work', to: '/#work' },
-    { label: 'Projects', to: '/#projects' },
-    { label: 'Experience', to: '/#experience' },
-    { label: 'Skills', to: '/#skills' },
+    { label: 'Home', to: '/' },
     { label: 'About', to: '/#about' },
+    { label: 'Experience', to: '/#experience' },
+    { label: 'Projects', to: '/#projects' },
+    { label: 'Skills', to: '/#skills' },
     { label: 'Contact', to: '/#contact' },
   ],
 
   hero: {
-    eyebrow: 'Android Developer',
-    lines: ['Enterprise MDM/UEM', 'Kotlin · Android'],
-    tags: ['Android Enterprise', 'DPC', 'MDM/UEM', 'Kotlin', 'DevicePolicyManager'],
-    primaryCta: { label: 'View work', to: '/#work' },
-    secondaryCta: { label: 'Contact', to: '/#contact' },
-    scrollLabel: 'Scroll',
+    bio: 'Building modern Android apps and enterprise MDM/UEM systems with Kotlin and Jetpack Compose.',
+    cta: { label: "Let's get started", to: '/#contact' },
   },
 
   about: {
-    label: 'About',
-    title: 'Building managed Android systems',
-    body: 'I develop enterprise Android applications involving device provisioning, policy enforcement, kiosk management, application management, remote commands, offline synchronization, and device lifecycle management. I also debug production issues, perform root-cause analysis, and improve existing Android codebases.',
+    title: 'About',
+    heading: 'Professional Summary',
     facts: [
-      { label: 'Location', value: 'Hyderabad, Telangana' },
-      { label: 'Focus', value: 'MDM / UEM / DPC' },
-      { label: 'Stack', value: 'Kotlin · Android Enterprise' },
+      { label: 'Location', value: 'Hyderabad, Telangana, India' },
+      { label: 'Current role', value: 'Android Developer — ONESAZ' },
+      { label: 'Focus', value: 'Kotlin · Compose · MDM/UEM' },
     ],
   },
 
-  device: {
-    brand: 'ACADHUB',
-    subtitle: 'Managed Device',
-    statuses: [
-      { label: 'Device Owner', active: true },
-      { label: 'Policy Applied', active: true },
-      { label: 'Kiosk Active', active: true },
-    ],
-  },
-
-  enrollmentSteps: [
+  experience: [
     {
-      id: 'qr',
-      title: 'QR Enrollment',
-      description:
-        'QR-based device provisioning starts Device Owner activation and enrollment into the MDM fleet.',
-      status: 'READY',
+      role: 'Android Developer — Enterprise MDM/UEM Platform',
+      company: 'ONESAZ',
+      location: 'Hyderabad, India',
+      period: 'Mar 2026 – Present',
+      points: [
+        'Architected and developed Acadhub MDM, an enterprise Android MDM/UEM platform for centralized device management, security, policy enforcement, and remote administration.',
+        'Engineered Device Owner/DPC workflows using Kotlin and DevicePolicyManager for device enrollment, restrictions, application management, and kiosk control.',
+        'Designed QR-based device provisioning and enrollment workflows covering Device Owner activation, policy synchronization, kiosk initialization, and device recovery.',
+        'Built reliable remote-management pipelines using FCM, Room Database, and WorkManager for asynchronous commands, offline synchronization, retries, and background execution.',
+        'Implemented remote capabilities including policy deployment, application installation/update, device restrictions, kiosk control, and administrative actions.',
+        'Debugged and resolved production issues across synchronization failures, background execution, device recovery, and OS/OEM compatibility.',
+        'Performed root-cause analysis and improved modular Android architecture for maintainable enterprise device-management workflows.',
+      ],
     },
     {
-      id: 'register',
-      title: 'Device Owner / DPC',
-      description:
-        'Device Owner and DPC workflows establish enterprise control for restrictions and management.',
-      status: 'ACTIVE',
-    },
-    {
-      id: 'policy',
-      title: 'Policy Sync',
-      description:
-        'Policies synchronize to the device for restrictions, apps, and administrative controls.',
-      status: 'SYNCED',
-    },
-    {
-      id: 'remote',
-      title: 'Remote Commands',
-      description:
-        'FCM, Room, and WorkManager power asynchronous commands, retries, and offline sync.',
-      status: 'ONLINE',
-    },
-    {
-      id: 'kiosk',
-      title: 'Kiosk Control',
-      description:
-        'Lock Task / kiosk mode initializes a restricted managed experience on the device.',
-      status: 'LOCKED',
+      role: 'Android Development Intern',
+      company: 'Skillcraft Technology',
+      location: 'Remote',
+      period: 'Jul 2025 – Aug 2025',
+      points: [
+        'Developed lifecycle-aware Android modules using Kotlin and XML.',
+        'Integrated camera workflows for real-time QR-code scanning and asset barcode detection.',
+        'Implemented local transactional data flows using SQLite for responsive task-tracking workflows.',
+        'Worked on Android components, debugging, and application testing to improve reliability and user experience.',
+      ],
     },
   ],
-
-  featured: {
-    id: 'acadhub-mdm',
-    title: 'Acadhub MDM',
-    subtitle: 'Enterprise Android MDM/UEM Platform',
-    description:
-      'Enterprise Android MDM/UEM platform for centralized device management, security, policy enforcement, and remote administration.',
-    stack: [
-      'Kotlin',
-      'Android Enterprise',
-      'DevicePolicyManager',
-      'DPC',
-      'FCM',
-      'Room',
-      'WorkManager',
-      'Lock Task Mode',
-    ],
-    layers: [
-      { id: 'admin', label: 'Remote Administration', detail: 'Policies, apps, device actions' },
-      { id: 'pipeline', label: 'Command Pipeline', detail: 'FCM · Room · WorkManager' },
-      { id: 'device', label: 'Android DPC', detail: 'Device Owner · Kiosk · Restrictions' },
-    ],
-    concepts: [
-      'Enrollment',
-      'Device Owner',
-      'Policy',
-      'Kiosk',
-      'App Management',
-      'Offline Sync',
-    ],
-    highlights: [
-      'Device enrollment, policy deployment, kiosk management, and remote administration',
-      'Device Owner / DPC with DevicePolicyManager for restrictions and app control',
-      'QR-based provisioning covering Device Owner activation and policy synchronization',
-      'Remote pipelines with FCM, Room, and WorkManager for offline sync and retries',
-      'Production debugging across sync failures, background execution, and OEM issues',
-    ],
-    github: 'https://github.com/BARDAVAL-JAGADEESH',
-  },
-
-  enrollmentPipeline: [
-    { id: 'qr', label: 'QR Code', done: 'SCANNED' },
-    { id: 'provision', label: 'Provisioning', done: 'PROVISIONED' },
-    { id: 'owner', label: 'Device Owner', done: 'OWNER SET' },
-    { id: 'policy', label: 'Policy Sync', done: 'SYNCED' },
-    { id: 'apps', label: 'App Management', done: 'MANAGED' },
-    { id: 'kiosk', label: 'Kiosk Init', done: 'ACTIVE' },
-    { id: 'remote', label: 'Remote Commands', done: 'READY' },
-    { id: 'recovery', label: 'Device Recovery', done: 'SUPPORTED' },
-  ],
-
-  policyEngine: {
-    title: 'Policy & control',
-    description:
-      'Enterprise controls flow from administration to the device through DevicePolicyManager and DPC workflows.',
-    flow: ['Enrollment', 'Device Owner', 'Policy', 'Restrictions', 'Kiosk'],
-    categories: [
-      { name: 'Kiosk / Lock Task', detail: 'Restricted managed experience' },
-      { name: 'Applications', detail: 'Install, update, and manage apps' },
-      { name: 'Device Restrictions', detail: 'Enterprise capability limits' },
-      { name: 'Remote Actions', detail: 'Administrative device commands' },
-      { name: 'Offline Sync', detail: 'Retries and background execution' },
-      { name: 'Recovery', detail: 'Device recovery workflows' },
-    ],
-  },
-
-  kiosk: {
-    title: 'Kiosk Mode',
-    description:
-      'Devices move into Lock Task / kiosk mode for a restricted, administratively controlled experience.',
-    lockingLabel: 'Locking device…',
-    activeLabel: 'Kiosk Active',
-    managedBy: 'Managed by Acadhub MDM',
-  },
-
-  architecture: {
-    title: 'Under the hood',
-    subtitle: 'How remote management reaches the Android device.',
-    nodes: [
-      {
-        id: 'admin',
-        label: 'Admin Actions',
-        detail: 'Policy, apps, kiosk, and device commands',
-      },
-      {
-        id: 'fcm',
-        label: 'FCM',
-        detail: 'Remote notifications and command delivery',
-      },
-      {
-        id: 'work',
-        label: 'WorkManager',
-        detail: 'Background execution, retries, offline work',
-      },
-      {
-        id: 'room',
-        label: 'Room Database',
-        detail: 'Local persistence for sync and state',
-      },
-      {
-        id: 'dpc',
-        label: 'Android DPC',
-        detail: 'Device Owner management layer',
-      },
-      {
-        id: 'dpm',
-        label: 'DevicePolicyManager',
-        detail: 'Restrictions, apps, and kiosk control',
-      },
-      {
-        id: 'device',
-        label: 'Managed Device',
-        detail: 'Enforced enterprise device state',
-      },
-    ],
-    packetSteps: [
-      'Admin · Deploy policy',
-      'FCM command',
-      'WorkManager job',
-      'Room sync',
-      'DPC / DevicePolicyManager',
-      'Policy applied ✓',
-    ],
-  },
 
   projects: [
+    {
+      id: 'acadhub-mdm',
+      title: 'Acadhub MDM',
+      tag: 'Enterprise · Production',
+      description:
+        'Enterprise Android MDM/UEM platform for centralized device management, security, policy enforcement, and remote administration.',
+      longDescription:
+        'Built an enterprise MDM platform supporting device enrollment, policy deployment, kiosk management, application management, and remote administration. Implemented Device Owner/DPC, offline synchronization, remote commands, and device recovery workflows.',
+      stack: [
+        'Kotlin',
+        'Android Enterprise',
+        'DevicePolicyManager',
+        'FCM',
+        'Room',
+        'WorkManager',
+      ],
+      github: 'https://github.com/BARDAVAL-JAGADEESH',
+      highlights: [
+        'Device enrollment and QR-based provisioning',
+        'Device Owner / DPC and policy enforcement',
+        'Kiosk / Lock Task management',
+        'Application install, update, and management',
+        'Remote commands with FCM, Room, and WorkManager',
+        'Offline synchronization and device recovery',
+      ],
+    },
+    {
+      id: 'acadhub-notebook',
+      title: 'Acadhub Notebook',
+      tag: 'Education · Student App',
+      description:
+        'A student-focused Android notebook for organizing subjects, topics, and study notes in one place.',
+      longDescription:
+        'Acadhub Notebook is built for students who need a simple way to capture and organize class notes. The app helps students structure learning by subject and topic, keep notes easy to find, and stay productive during study sessions. Designed as part of the Acadhub education ecosystem with a clean Android experience.',
+      stack: ['Kotlin', 'Jetpack Compose', 'Room', 'Android'],
+      github: 'https://github.com/BARDAVAL-JAGADEESH',
+      highlights: [
+        'Built for students to manage study notes day to day',
+        'Organize content by subjects and topics',
+        'Create, edit, and review notes with a clear reading flow',
+        'Local storage with Room for reliable offline access',
+        'Modern Android UI with Jetpack Compose',
+      ],
+    },
     {
       id: 'booking-directory',
       title: 'Online Booking & Company Directory',
@@ -229,14 +126,14 @@ export const portfolioData = {
       description:
         'Android features for online booking and searchable company-directory workflows.',
       longDescription:
-        'Team project focused on online booking and company-directory workflows. Built with Kotlin and XML, using Room for local persistence and Firebase for backend integration, including searchable company-directory functionality.',
-      stack: ['Kotlin', 'XML', 'Room', 'Firebase'],
+        'Developed Android application features for online booking and company-directory workflows as part of a team project. Implemented Room-based local persistence, Firebase integration, and searchable company-directory functionality.',
+      stack: ['Kotlin', 'XML', 'Room Database', 'Firebase'],
       github: 'https://github.com/BARDAVAL-JAGADEESH',
       highlights: [
         'Online booking feature workflows',
         'Room-based local persistence',
         'Firebase integration',
-        'Searchable company directory',
+        'Searchable company-directory functionality',
       ],
     },
   ],
@@ -283,44 +180,10 @@ export const portfolioData = {
       },
       {
         title: 'Tools',
-        items: ['Android Studio', 'Git', 'GitHub', 'Firebase'],
+        items: ['Android Studio', 'Git', 'GitHub', 'Firebase', 'Claude Code', 'Cursor'],
       },
     ],
   },
-
-  experience: [
-    {
-      year: '2026',
-      role: 'Android Developer — Enterprise MDM/UEM',
-      focus: 'Acadhub MDM',
-      company: 'ONESAZ',
-      location: 'Hyderabad, India',
-      period: 'Mar 2026 – Present',
-      points: [
-        'Architected and developed Acadhub MDM, an enterprise Android MDM/UEM platform for centralized device management, security, policy enforcement, and remote administration.',
-        'Engineered Device Owner/DPC workflows using Kotlin and DevicePolicyManager for enrollment, restrictions, application management, and kiosk control.',
-        'Designed QR-based provisioning covering Device Owner activation, policy synchronization, kiosk initialization, and device recovery.',
-        'Built remote-management pipelines with FCM, Room, and WorkManager for asynchronous commands, offline sync, retries, and background execution.',
-        'Implemented remote capabilities including policy deployment, app install/update, restrictions, kiosk control, and administrative actions.',
-        'Debugged production issues across sync failures, background execution, device recovery, and OS/OEM compatibility.',
-        'Improved modular Android architecture and maintainable enterprise device-management workflows.',
-      ],
-    },
-    {
-      year: '2025',
-      role: 'Android Development Intern',
-      focus: 'Kotlin · XML',
-      company: 'Skillcraft Technology',
-      location: 'Remote',
-      period: 'Jul 2025 – Aug 2025',
-      points: [
-        'Developed lifecycle-aware Android modules using Kotlin and XML.',
-        'Integrated camera workflows for real-time QR-code scanning and asset barcode detection.',
-        'Implemented local transactional data flows using SQLite for responsive task-tracking workflows.',
-        'Worked on Android components, debugging, and application testing to improve reliability.',
-      ],
-    },
-  ],
 
   education: [
     {
@@ -348,85 +211,29 @@ export const portfolioData = {
     {
       title: 'IEEE ICPCN 2025',
       detail:
-        'First author of research paper “Enhanced Detection of Sugarcane Leaf Diseases Through Machine Learning Approaches.”',
+        'First author of “Enhanced Detection of Sugarcane Leaf Diseases Through Machine Learning Approaches.”',
     },
     {
       title: 'Competitive Programming',
       detail:
-        'Ranked Top 10 among 3,000+ engineering students in LPU’s Advanced Competitive Programming Cohort.',
+        'Top 10 among 3,000+ engineering students in LPU’s Advanced Competitive Programming Cohort.',
     },
     {
       title: 'Open Source',
       detail:
-        'Contributed by fixing bugs, improving functionality, and submitting changes through Git/GitHub workflows.',
+        'Bug fixes and improvements across existing codebases using Git/GitHub workflows.',
     },
   ],
 
-  currentlyBuilding: {
-    title: 'Currently building',
-    product: 'Acadhub MDM',
-    status: 'IN PROGRESS',
-    pillars: ['Device Owner', 'DPC', 'Kiosk', 'Remote Commands'],
-    note: 'Enterprise Android MDM/UEM at ONESAZ — provisioning, policy, kiosk, and remote administration.',
-  },
-
   contact: {
-    titleLines: ['Let’s connect'],
+    title: 'Get in touch',
+    lede: 'Open to Android Developer roles focused on enterprise MDM/UEM and production Android systems.',
     cta: 'Email me',
-    lede: 'Open to Android Developer roles focused on enterprise MDM/UEM, DPC, and production Android systems.',
   },
 } as const
 
-export type ProjectDetail = {
-  id: string
-  title: string
-  tag: string
-  description: string
-  longDescription: string
-  stack: readonly string[] | string[]
-  github: string
-  highlights: readonly string[] | string[]
-  featured?: boolean
-  flow?: readonly string[]
-  demo?: 'ocr'
+export type Project = (typeof portfolioData.projects)[number]
+
+export function getProjectById(id: string): Project | null {
+  return portfolioData.projects.find((project) => project.id === id) ?? null
 }
-
-export function getProjectById(id: string): ProjectDetail | null {
-  if (id === portfolioData.featured.id) {
-    return {
-      id: portfolioData.featured.id,
-      title: portfolioData.featured.title,
-      tag: 'Featured',
-      description: portfolioData.featured.description,
-      longDescription: portfolioData.featured.description,
-      stack: portfolioData.featured.stack,
-      github: portfolioData.featured.github,
-      highlights: portfolioData.featured.highlights,
-      featured: true,
-    }
-  }
-
-  const project = portfolioData.projects.find((item) => item.id === id)
-  if (!project) return null
-
-  return {
-    id: project.id,
-    title: project.title,
-    tag: project.tag,
-    description: project.description,
-    longDescription: project.longDescription,
-    stack: project.stack,
-    github: project.github,
-    highlights: project.highlights,
-  }
-}
-
-export const profile = {
-  ...portfolioData.personal,
-  github: portfolioData.social.github,
-  linkedin: portfolioData.social.linkedin,
-}
-
-export const navLinks = portfolioData.nav
-export const experience = portfolioData.experience
-export const projects = portfolioData.projects

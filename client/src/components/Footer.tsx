@@ -1,8 +1,8 @@
 import { portfolioData } from '../data/content'
 
 export function Footer() {
-  const { personal } = portfolioData
   const year = new Date().getFullYear()
+  const { personal } = portfolioData
 
   return (
     <footer className="footer">
@@ -10,7 +10,7 @@ export function Footer() {
         <p>
           © {year} {personal.name}
         </p>
-        <p>Android Developer · MDM/UEM · Kotlin</p>
+        <p>{personal.headline}</p>
       </div>
     </footer>
   )

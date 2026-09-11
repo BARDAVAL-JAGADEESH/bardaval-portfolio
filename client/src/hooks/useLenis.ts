@@ -6,11 +6,19 @@ export function useLenis() {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduce) return
 
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+
     const lenis = new Lenis({
       duration: 1.05,
       smoothWheel: true,
       touchMultiplier: 1.1,
+      autoRaf: false,
     })
+
+    // Start from the top so refresh never resumes mid-page
+    lenis.scrollTo(0, { immediate: true })
 
     let frame = 0
     const raf = (time: number) => {

@@ -5,13 +5,11 @@ export function Credentials() {
   const { education, certifications, achievements } = portfolioData
 
   return (
-    <section className="section credentials" id="credentials" aria-labelledby="credentials-title">
+    <section className="section credentials" id="education">
       <div className="section__inner">
         <Reveal>
           <p className="section__label">Background</p>
-          <h2 className="section__title" id="credentials-title">
-            Education & more
-          </h2>
+          <h2 className="section__title">Education & more</h2>
         </Reveal>
 
         <div className="credentials__grid">

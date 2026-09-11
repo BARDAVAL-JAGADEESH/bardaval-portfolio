@@ -5,44 +5,34 @@ export function Experience() {
   const { experience } = portfolioData
 
   return (
-    <section
-      className="section experience"
-      id="experience"
-      aria-labelledby="experience-title"
-    >
+    <section className="section experience" id="experience">
       <div className="section__inner">
         <Reveal>
-          <p className="section__label">Professional experience</p>
-          <h2 className="section__title" id="experience-title">
-            Experience
-          </h2>
+          <p className="section__label">Career</p>
+          <h2 className="section__title">Experience</h2>
         </Reveal>
 
-        <ol className="timeline">
+        <div className="experience__list">
           {experience.map((item, i) => (
-            <Reveal key={`${item.company}-${item.period}`} delay={i * 0.06}>
-              <li className="timeline__item">
-                <div className="timeline__year">
-                  <span>{item.year}</span>
-                  <span className="timeline__rail" aria-hidden="true" />
+            <Reveal key={`${item.company}-${item.period}`} delay={i * 0.05}>
+              <article className="experience__item">
+                <div className="experience__meta">
+                  <p className="experience__period">{item.period}</p>
+                  <p className="experience__place">{item.location}</p>
                 </div>
-                <div className="timeline__body">
-                  <p className="timeline__role">{item.role}</p>
-                  <p className="timeline__focus">{item.focus}</p>
-                  <h3>{item.company}</h3>
-                  <p className="timeline__meta">
-                    {item.location} · {item.period}
-                  </p>
+                <div className="experience__body">
+                  <h3>{item.role}</h3>
+                  <p className="experience__company">{item.company}</p>
                   <ul>
                     {item.points.map((point) => (
                       <li key={point}>{point}</li>
                     ))}
                   </ul>
                 </div>
-              </li>
+              </article>
             </Reveal>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   )
